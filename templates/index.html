@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ server_name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>{{ server_name }}</h1>
+        </header>
+        
+        <div class="chat-container">
+            <div class="message-container" id="messageContainer"></div>
+            
+            <div class="input-container" id="usernameForm">
+                <input type="text" id="usernameInput" placeholder="Choose a username" maxlength="20">
+                <button id="setUsernameBtn">Set Username</button>
+            </div>
+            
+            <div class="input-container" id="messageForm" style="display: none;">
+                <input type="text" id="messageInput" placeholder="Type a message...">
+                <button id="sendMessageBtn">Send</button>
+            </div>
+        </div>
+        
+        <div class="status-container">
+            <p id="statusText">Not connected</p>
+            <p id="usernameDisplay"></p>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
